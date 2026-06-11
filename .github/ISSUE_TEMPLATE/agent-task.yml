@@ -1,0 +1,44 @@
+name: 🤖 Agent task
+description: Describe work for the plan agent to plan and GitHub Copilot to build.
+title: "[task]: "
+labels: ["claude"]
+body:
+- type: markdown
+  attributes:
+    value: |
+      This issue feeds the **issue → plan → build** loop. Fill in the request below — it
+      becomes the prompt the agents work from, so be concrete. On submit, the 🧭 **Plan
+      Agent** researches the repo and appends a plan to this issue; refine it by commenting
+      `@claude …`. When the plan looks right, assign **Copilot** to build it.
+- type: textarea
+  id: summary
+  attributes:
+    label: Summary
+    description: What needs to happen, and why. One or two short paragraphs.
+    placeholder: e.g. The backup cronjob still double-gzips the SQL dump — drop the inner gzip so restores match the new rclone image.
+  validations:
+    required: true
+- type: textarea
+  id: acceptance
+  attributes:
+    label: Acceptance criteria
+    description: What does "done" look like? A checklist the builder (and reviewer) can verify against.
+    placeholder: |
+      - [ ] ...
+      - [ ] ...
+  validations:
+    required: true
+- type: textarea
+  id: context
+  attributes:
+    label: Context & pointers
+    description: Relevant apps/components/files, constraints, and links. The more specific, the better the plan.
+    placeholder: e.g. apps/drupal/components/backups, apps/rclone; see PR #8 for the prior attempt.
+  validations:
+    required: false
+- type: markdown
+  attributes:
+    value: |
+      ---
+      _The plan agent maintains everything below the divider it adds — edit your request above
+      it, or comment `@claude` to refine. Don't hand-edit the generated plan._
