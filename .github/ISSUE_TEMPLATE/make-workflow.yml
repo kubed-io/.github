@@ -1,7 +1,7 @@
 name: 🔧 Make an n8n workflow
 description: Describe an n8n workflow for the plan agent to plan and GitHub Copilot to build.
 title: "[workflow]: "
-labels: ["agent"]
+labels: ["enhancement"]
 body:
 - type: markdown
   attributes:

@@ -1,15 +1,15 @@
 name: 🤖 Agent task
-description: Describe work for the plan agent to plan and GitHub Copilot to build.
+description: Describe work for the agents to spec, plan and build.
 title: "[task]: "
-labels: ["claude"]
+labels: ["enhancement"]
 body:
 - type: markdown
   attributes:
     value: |
-      This issue feeds the **issue → plan → build** loop. Fill in the request below — it
-      becomes the prompt the agents work from, so be concrete. On submit, the 🧭 **Plan
-      Agent** researches the repo and appends a plan to this issue; refine it by commenting
-      `@claude …`. When the plan looks right, assign **Copilot** to build it.
+      This issue feeds the agents: once Dr K adds the `agent` label, the spec agent
+      brainstorms the design with Dr K here, one comment at a time, and each round of the
+      spec is linked from its reply. `spec approved` commits it and opens a draft pull
+      request, where the plan and then the code follow.
 - type: textarea
   id: summary
   attributes:
@@ -36,9 +36,3 @@ body:
     placeholder: e.g. apps/drupal/components/backups, apps/rclone; see PR #8 for the prior attempt.
   validations:
     required: false
-- type: markdown
-  attributes:
-    value: |
-      ---
-      _The plan agent maintains everything below the divider it adds — edit your request above
-      it, or comment `@claude` to refine. Don't hand-edit the generated plan._
