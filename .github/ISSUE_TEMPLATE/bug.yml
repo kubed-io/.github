@@ -2,6 +2,7 @@ name: 🐛 Bug
 description: Report something in the homelab that's broken or behaving wrong.
 title: "[bug]: "
 labels: ["bug"]
+type: Bug
 body:
 - type: markdown
   attributes:

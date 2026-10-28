@@ -2,6 +2,7 @@ name: 🤖 Agent task
 description: Describe work for the agents to spec, plan and build.
 title: "[task]: "
 labels: ["enhancement"]
+type: Task
 body:
 - type: markdown
   attributes:
